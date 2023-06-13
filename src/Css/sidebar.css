@@ -1,0 +1,9 @@
+.sidebar{
+    transform: translateX(-240px);
+    transition: 0.2s;
+  
+}
+
+.sidebar.active{
+    transform: translateX(0px);
+}
