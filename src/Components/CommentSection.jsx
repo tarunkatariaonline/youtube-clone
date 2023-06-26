@@ -90,7 +90,7 @@ const commentsData = [
 
 const CommentSection = () => {
   return (
-   <Box w={"52%"}>
+   <Box w={["95%","52%"]}>
 
 {commentsData.map((comment,index)=>{
    return (commentsData.length!==0)? <CommentList key={index} comment={comment}/>:""

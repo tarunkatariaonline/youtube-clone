@@ -7,3 +7,7 @@
 .sidebar.active{
     transform: translateX(0px);
 }
+
+.width{
+    width: 50%;
+}

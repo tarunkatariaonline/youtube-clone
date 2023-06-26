@@ -5,9 +5,12 @@ import VideoCard from './VideoCard'
 import { MdHome, MdSubscriptions, MdVideoLibrary } from 'react-icons/md'
 import { YOUTUBE_VIDEO_API } from '../utils'
 import {Link} from 'react-router-dom'
+import '../Css/scrollbar.css'
+
 
 const Home = () => {
-  const [videos,setVideos] = useState([])
+  const [videos,setVideos] = useState(null)
+
   const fetchVideos = async()=>{
     const res = await fetch(YOUTUBE_VIDEO_API)
     const json = await res.json()
@@ -15,8 +18,11 @@ const Home = () => {
     setVideos(json?.items)
   }
 
+ 
+
  useEffect(()=>{
   fetchVideos()
+
  },[])
   return (
     <HStack  w={"100%"} alignItems={"flex-start"}>
@@ -30,13 +36,17 @@ const Home = () => {
 <HStack w={"100%"}  justifyContent={"center"} overflowX={"hidden"}   >
 <HStack w={"99%"}   alignItems={"flex-start"}  >
 <Box w={"100%"} overflowX={"hidden"}  >
-<Box w={"100%"} overflowX={"hidden"}   bgColor={"white"}  position={"fixed"} top={"10vh"} zIndex={"3"}  >
+<Box w={"100%"} overflowX={"hidden"}   bgColor={"white"}  position={"fixed"} top={"10vh"} zIndex={"3"} className='scrollbarshow'  >
+
+
   <ButtonList/>
+  
+  
   </Box>
 
 
   <HStack w={"100%"} overflowY={"hidden"}  flexWrap={"wrap"} justifyContent={"center"} zIndex={"1"} mt={"10vh"} >
-   { (videos.length!==0)?videos.map((video)=>{
+   { (videos)?videos.map((video)=>{
       return <Link to={'/watch?v='+video.id} key={video.id}> <VideoCard  {...video}/></Link>
     }):""}
    

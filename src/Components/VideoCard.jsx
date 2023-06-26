@@ -18,8 +18,8 @@ views=   compactFormat(views, 'en')
     <Image w={"330px"} transition={"0.1s"}  borderRadius={"10px"} css={":hover{border-radius:0px}"} src={ImageUrl}></Image>
     </HStack>
 
-    <HStack h={"30px"} w={"330px"}  overflow={"hidden"} alignItems={"flex-start"} justifyContent={"flex-start"} my={"5px"} mb={"0px!important"} >
-      <Avatar ml={"15px"} size={"sm"} src='https://images.news18.com/ibnlive/uploads/2022/11/dhruv-rathee-16675921764x3.jpg'/>
+    <HStack h={"26px"} w={"330px"}  overflow={"hidden"} alignItems={"flex-start"} justifyContent={"flex-start"} my={"5px"} mb={"0px!important"} >
+      <Avatar ml={"15px"} size={"xs"}    name={channelTitle}  />
       <Text mx={"5px"}>{title}</Text>
     </HStack>
 

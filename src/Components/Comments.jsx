@@ -15,7 +15,7 @@ const Comments = ({comment}) => {
       </Text>
 </Box>
 </HStack>
-<Box ml={"20px"}  borderLeft={"1px solid black"} pl={"20px"}>
+<Box ml={["0px","20px"]}  borderLeft={"1px solid black"} pl={"20px"}>
 
 
 {(comment?.replies?.length!==0)?comment?.replies?.map((comm,index)=>{

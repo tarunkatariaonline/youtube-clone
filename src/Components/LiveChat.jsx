@@ -32,7 +32,7 @@ const LiveChat = () => {
     }
     },[dispatch])
   return (
-    <Stack flexDir={"column-reverse"} pt={"20px"} mt={"10px"} borderTopRadius={"15px"} ml={"30px"} w={"400px"} h={"400px"} bgColor={"#edf5f5"} shadow={"md"} overflowY={"scroll"}>
+    <Stack flexDir={"column-reverse"} pt={"20px"} mt={"10px"} borderTopRadius={"15px"} ml={"30px"} w={["90%","400px"]} h={["320px","400px"]} bgColor={"#edf5f5"} shadow={"md"} overflowY={"scroll"}>
 
 
  

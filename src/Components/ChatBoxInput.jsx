@@ -16,7 +16,7 @@ const ChatBoxInput = () => {
        setChatContent("")
        console.log("form submited")
     }}>
-  <HStack ml={"20px"} justifyContent={"center"}  h={"50px"}> <Input onChange={(e)=>{
+  <HStack ml={"20px"} w={["90%",""]} justifyContent={"center"}  h={"50px"}> <Input onChange={(e)=>{
    setChatContent(e.target.value)
   }} value={chatContent} h={"30px"} shadow={"base"}  placeholder='enter comment here' /> <Button type="submit" size={"sm"} colorScheme={"pink"}>Send</Button> </HStack>
   
