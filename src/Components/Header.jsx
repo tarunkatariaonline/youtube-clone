@@ -153,7 +153,7 @@ setTimeout(()=>{
 }}  color={"black"} size={"md"} colorScheme='none'  css={":hover{background-color:#d7d8db}"} padding={"2px"} borderRadius={"50%"}>  <MdArrowBack fontSize={"26px"}  /> </Button>
 
 <HStack w={"100%"} h={"35px"}  bgColor={"#f0f2f2"}>
-  <form onSubmit={(e)=>{
+  <form  onSubmit={(e)=>{
     e.preventDefault()
     navicate('/results?search_query='+keyword)
     setShowMobileSearchBar(false)
@@ -161,7 +161,7 @@ setTimeout(()=>{
 
 
   }}>
-<Input value={keyword}  onChange={(e)=>{
+<Input value={keyword}   onChange={(e)=>{
       setKeyword(e.target.value)
     }} placeholder='  Search Items Here' variant={"unstyled"} w={"100%"} ml={"5px"} />
 </form>

@@ -24,7 +24,7 @@ const WatchPage = () => {
 
 
     const fetchVideoDetails=async()=>{
-   const res = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoParameter}&key=AIzaSyD5J-yFntgSCvJ7X0Bdw4WHOUXKMvUl_ec`)
+   const res = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoParameter}&key=AIzaSyA8ItaMF0kKd43YrVPtY-SAYLQhGq-j1Pk`)
    const json = await res.json()
    console.log( "json data",json)
    setVideoDetail(json.items[0])

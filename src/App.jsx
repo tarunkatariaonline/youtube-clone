@@ -8,6 +8,7 @@ import { BrowserRouter as Router ,Route,Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import WatchPage from './Components/WatchPage';
 import SearchResultPage from './Components/SearchResultPage';
+import ScrollToTop from './Components/Helper/ScrollToTop';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     <ChakraProvider theme={theme}>
       <Router>
       <Header/>
-      
+      <ScrollToTop/>
       <Sidebar/>
         <Routes>
           <Route path='/' element={<Home/>} />

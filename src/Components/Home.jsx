@@ -1,4 +1,4 @@
-import { HStack ,Box,Button, Text} from '@chakra-ui/react'
+import { HStack ,Box,Button, Text, Divider} from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import ButtonList from './ButtonList'
 import VideoCard from './VideoCard'
@@ -9,13 +9,14 @@ import '../Css/scrollbar.css'
 
 
 const Home = () => {
-  const [videos,setVideos] = useState(null)
+  const [videos,setVideos] = useState([])
 
   const fetchVideos = async()=>{
     const res = await fetch(YOUTUBE_VIDEO_API)
     const json = await res.json()
-    
+    if(res.status===200||res.status===201){
     setVideos(json?.items)
+    }
   }
 
  
@@ -24,6 +25,14 @@ const Home = () => {
   fetchVideos()
 
  },[])
+
+
+ if(videos.length===0){
+  return <div>loading .. Api is crashed 💥
+     due to heavy traffic . please try after sometime... </div>
+ }
+
+ 
   return (
     <HStack  w={"100%"} alignItems={"flex-start"}>
       <Box w={"90px"}  h={"90vh"} position={"sticky"} top={"10vh"} display={["none","block"]}  >
@@ -46,9 +55,11 @@ const Home = () => {
 
 
   <HStack w={"100%"} overflowY={"hidden"}  flexWrap={"wrap"} justifyContent={"center"} zIndex={"1"} mt={"10vh"} >
-   { (videos)?videos.map((video)=>{
+   { (videos.length!==0)?videos.map((video)=>{
       return <Link to={'/watch?v='+video.id} key={video.id}> <VideoCard  {...video}/></Link>
-    }):""}
+    }):<div>Loading</div>}
+
+   
    
   
   </HStack>

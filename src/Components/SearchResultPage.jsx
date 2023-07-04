@@ -7,13 +7,13 @@ const SearchResultPage = () => {
     const query = searchParams.get("search_query")
     // console.log(query)
 
-    const [videos,setVideos] = useState(null)
+    const [videos,setVideos] = useState([])
    
  
 
   useEffect(()=>{
     const  getSearchResults = async()=>{
-        const res =  await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyD5J-yFntgSCvJ7X0Bdw4WHOUXKMvUl_ec`)
+        const res =  await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyA8ItaMF0kKd43YrVPtY-SAYLQhGq-j1Pk`)
         const json = await res.json()
         console.log(json.items)
         setVideos(json.items)

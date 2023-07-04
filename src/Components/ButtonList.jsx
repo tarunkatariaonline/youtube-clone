@@ -8,9 +8,9 @@ import '../Css/scrollbar.css'
 
 const ButtonList = () => {
 
-  const [buttonListItems,setButtonListItems] = useState([])
+  const [buttonListItems,setButtonListItems] = useState(null)
   const fetchVideoCategory = async()=>{
-    const res = await fetch('https://youtube.googleapis.com/youtube/v3/videoCategories?part=snippet&hl=en&regionCode=in&key=AIzaSyD5J-yFntgSCvJ7X0Bdw4WHOUXKMvUl_ec')
+    const res = await fetch('https://youtube.googleapis.com/youtube/v3/videoCategories?part=snippet&hl=en&regionCode=in&key=AIzaSyA8ItaMF0kKd43YrVPtY-SAYLQhGq-j1Pk')
     const json = await res.json()
     console.log(json)
     setButtonListItems(json.items)
@@ -21,6 +21,9 @@ const ButtonList = () => {
   },[])
 
   const [selectedButton,setSelectedButton]= useState("")
+if(buttonListItems===null){
+  return ""
+}
   return (
     
     <HStack w={"100%"} className='scrollbarshow' position={"sticky"}  top={"10vh"} my={"10px"} mx={"20px"} overflowX={"scroll"}   >
