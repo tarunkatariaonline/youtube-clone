@@ -28,8 +28,7 @@ const Home = () => {
 
 
  if(videos.length===0){
-  return <div>loading .. Api is crashed 💥
-     due to heavy traffic . please try after sometime... </div>
+  return <div>loading .. </div>
  }
 
  
