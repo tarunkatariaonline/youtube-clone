@@ -4,4 +4,4 @@ export const YOUTUBE_VIDEO_API=`https://youtube.googleapis.com/youtube/v3/videos
 
 
 
-export const YOUTUBE_SUGGESTION_API =" https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
+export const YOUTUBE_SUGGESTION_API ="https://proxy.cors.sh/https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
